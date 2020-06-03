@@ -1,41 +1,73 @@
 package view;
 
-import java.awt.Color;
+import java.awt.GraphicsConfiguration;
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.border.Border;
 
 import contract.IController;
 import contract.IModel;
-import entity.Entity;
 
 /**
- * The Class ViewFrame.
+ * The ViewFrame class.
  *
  * @author Eliphaz
+ * @version 1.0
  */
 class ViewFrame extends JFrame implements KeyListener {
 
-	Entity entity;
 	/** The model. */
 	private IModel model;
-
 	/** The controller. */
 	private IController controller;
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -697358409737458175L;
+	
+	/**
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @throws HeadlessException the headless exception
+	 */
+	public ViewFrame(final IModel model) throws HeadlessException {
+		this.buildViewFrame(model);
+	}
 
 	/**
 	 * Instantiates a new view frame.
 	 *
 	 * @param model the model
-	 * 
+	 * @param gc    the gc
 	 */
-	public ViewFrame(final IModel model) {
+	public ViewFrame(final IModel model, final GraphicsConfiguration gc) {
+		super(gc);
+		this.buildViewFrame(model);
+	}
+
+	/**
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @param title the title
+	 * @throws HeadlessException the headless exception
+	 */
+	public ViewFrame(final IModel model, final String title) throws HeadlessException {
+		super(title);
+		this.buildViewFrame(model);
+	}
+
+	/**
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @param title the title
+	 * @param gc    the gc
+	 */
+	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
+		super(title, gc);
 		this.buildViewFrame(model);
 	}
 
@@ -82,20 +114,16 @@ class ViewFrame extends JFrame implements KeyListener {
 	 */
 	private void buildViewFrame(final IModel model) {
 		this.setModel(model);
-		//this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(true);
 		this.addKeyListener(this);
-		this.setContentPane(new ViewPanel(this));
-		this.setSize(41 * 32 + this.getInsets().left + this.getInsets().right,
-				24 * 32 + this.getInsets().top + this.getInsets().bottom);
+		ViewPanel vp = new ViewPanel(this);
+		this.setTitle("Boulder Dash - Group 6    *****************************************************************************      MENU      ****************************************************************************");
+		this.setContentPane(vp);
+		//this.setSize(1830, 780);
+		this.setSize(1480, 780);
 		this.setLocationRelativeTo(null);
 	}
-
-	/*private void setBorder(Border createLineBorder) {
-		// TODO Auto-generated method stub
-		
-	}*/
 
 	/**
 	 * Prints the message.
@@ -105,13 +133,14 @@ class ViewFrame extends JFrame implements KeyListener {
 	public void printMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);
 	}
-
+ 
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
 	 */
 	public void keyTyped(final KeyEvent e) {
+
 	}
 
 	/*
@@ -120,7 +149,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
 	 */
 	public void keyPressed(final KeyEvent e) {
-
+		
 	}
 
 	/*
@@ -129,39 +158,6 @@ class ViewFrame extends JFrame implements KeyListener {
 	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
 	 */
 	public void keyReleased(final KeyEvent e) {
-		switch (e.getKeyCode()) {
-		case KeyEvent.VK_UP:
-			this.getController().movement(e.getKeyCode());
-			break;
-		case KeyEvent.VK_DOWN:
-			this.getController().movement(e.getKeyCode());
-			break;
-		case KeyEvent.VK_RIGHT:
-			this.getController().movement(e.getKeyCode());
-			break;
-		case KeyEvent.VK_LEFT:
-			this.getController().movement(e.getKeyCode());
-			break;
-		case KeyEvent.VK_1:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		case KeyEvent.VK_2:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		case KeyEvent.VK_3:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		case KeyEvent.VK_4:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		case KeyEvent.VK_6:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		case KeyEvent.VK_5:
-			this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode()));
-			break;
-		default:
-			break;
-		}
+		this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode())); 
 	}
 }
