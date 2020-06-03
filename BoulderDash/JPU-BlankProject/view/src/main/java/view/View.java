@@ -32,7 +32,7 @@ public final class View implements IView, Runnable {
 	}
 	
 	public View() {
-		
+		//commentaire
 	}
 
 	/**
