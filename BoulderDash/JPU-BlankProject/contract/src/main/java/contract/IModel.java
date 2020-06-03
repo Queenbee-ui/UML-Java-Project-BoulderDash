@@ -3,8 +3,8 @@ package contract;
 import java.awt.Image;
 import java.util.Observable;
 
-import entity.Character;
-import entity.Entity;
+import main.java.entity.Entity;
+import main.java.entity.Character;
 
 /**
  * The Interface IModel.

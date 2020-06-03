@@ -1,9 +1,5 @@
 package contract;
 
-import java.awt.Image;
-
-import entity.Entity;
-
 /**
  * The Interface IController.
  *

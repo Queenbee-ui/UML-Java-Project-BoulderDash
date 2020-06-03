@@ -4,11 +4,11 @@ import java.awt.Image;
 
 import contract.IModel;
 import contract.IView;
-import entity.Air;
-import entity.Boulder;
-import entity.Diamond;
-import entity.Entity;
-import entity.Character;
+import main.java.entity.Air;
+import main.java.entity.Boulder;
+import main.java.entity.Diamond;
+import main.java.entity.Entity;
+import main.java.entity.Character;
 
 	/**
 	 * 

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 /target/
 .classpath
 .class
 /.gitignore
 /.project
 /.settings/
+=======
+/main/
+>>>>>>> branch 'master' of https://github.com/Queenbee-ui/UML-Java-Project-BoulderDash
