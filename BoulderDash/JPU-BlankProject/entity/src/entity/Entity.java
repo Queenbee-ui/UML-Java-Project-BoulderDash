@@ -66,5 +66,116 @@ public abstract class Entity {
         this.sprite = sprite;
     }
 	
+	/**
+	 * The getSprite method.
+	 * @return Sprite the sprite of the entity
+	 */
+	public final Sprite getSprite() {
+        return this.sprite;
+    }
 	
+	/**
+	 * The setPositionX method.
+	 * @param x the new x position of the entity
+	 */
+	public void setPositionX(int x) {
+		this.positionX = x;
+	}
+	
+	/**
+	 * The getPositionX method.
+	 * @return the x position of the entity
+	 */
+	public int getPositionX() {
+		return this.positionX;
+	}
+	
+	/**
+	 * The getPositionY method.
+	 * @return the y position of the entity
+	 */
+	public int getPositionY() {
+		return this.positionY;
+	}
+	
+	/**
+	 * The setPositionY method.
+	 * @param y the new y position of the entity
+	 */
+	public void setPositionY(int y) {
+		this.positionY = y;
+	}
+
+	/**
+	 * The getSpriteUp method.
+	 * @return Sprite the up sprite of the entity
+	 */
+	public Sprite getSpriteUp() {
+		return null;
+	}
+	
+	/**
+	 * The getSpriteDown method.
+	 * @return Sprite the down sprite of the entity
+	 */
+	public Sprite getSpriteDown() {
+		return null;
+	}
+	
+	/**
+	 * The getSpriteTurnLeft method.
+	 * @return Sprite the left sprite of the entity
+	 */
+	public Sprite getSpriteTurnLeft() {
+		return null;
+	}
+	
+	/**
+	 * The getSpriteTurnRight method.
+	 * @return Sprite the right sprite of the entity
+	 */
+	public Sprite getSpriteTurnRight() {
+		return null;
+	}
+	
+	/**
+	 * The getSpriteDeath method.
+	 * @return Sprite the death sprite of the entity
+	 */
+	public Sprite getSpriteDeath() {
+		return null;
+	}
+
+	/**
+	 * The getIsFallen method.
+	 * @return a boolean that indicates if the entity if falling
+	 */
+	public boolean getIsFallen() {
+		return isFallen;
+	}
+
+	/**
+	 * The setIsFallen method.
+	 * @param isFallen the indication of falling
+	 */
+	public void setIsFallen(boolean isFallen) {
+		this.isFallen = isFallen;
+	}
+
+	/**
+	 * The getStrategy method.
+	 * @return the strategy of the entity
+	 */
+	public Strategy<?> getStrategy() {
+		return strategy;
+	}
+
+	/**
+	 * The setStrategy method.
+	 * @param strategy the new strategy of the entity
+	 */
+	public void setStrategy(Strategy<?> strategy) {
+		this.strategy = strategy;
+	}
+
 }
