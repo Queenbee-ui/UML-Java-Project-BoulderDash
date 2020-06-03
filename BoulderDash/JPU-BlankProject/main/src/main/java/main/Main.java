@@ -12,7 +12,7 @@ import view.View;
 /**
  * The Class Main.
  *
- * @author rodri
+ * @author Alexis
  */
 public abstract class Main {
 
