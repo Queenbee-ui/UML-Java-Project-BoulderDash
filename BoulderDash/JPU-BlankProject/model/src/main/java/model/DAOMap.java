@@ -12,6 +12,7 @@ import main.java.entity.Line;
  *
  * @author Alexis
  */
+//
 class DAOMap extends DAOEntity<Line>{
 
 	/**

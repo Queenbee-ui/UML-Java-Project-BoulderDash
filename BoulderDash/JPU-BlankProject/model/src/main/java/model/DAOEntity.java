@@ -13,6 +13,7 @@ import main.java.entity.Entity;;
  * @param <E>
  *          the element type
  */
+//
 abstract class DAOEntity<E extends Entity> {
 
 	/** The connection. */
