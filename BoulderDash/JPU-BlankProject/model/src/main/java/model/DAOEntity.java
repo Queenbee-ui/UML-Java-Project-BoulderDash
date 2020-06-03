@@ -3,7 +3,7 @@ package model;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import entity.Entity;
+import main.java.entity.Entity;;
 
 /**
  * The Class DAOEntity.

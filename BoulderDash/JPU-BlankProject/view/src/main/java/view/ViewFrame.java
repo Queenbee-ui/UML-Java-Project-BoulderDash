@@ -11,7 +11,7 @@ import javax.swing.border.Border;
 
 import contract.IController;
 import contract.IModel;
-import entity.Entity;
+import main.java.entity.Entity;
 
 /**
  * The Class ViewFrame.

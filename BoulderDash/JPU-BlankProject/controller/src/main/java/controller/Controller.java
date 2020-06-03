@@ -7,10 +7,10 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import entity.Air;
-import entity.Diamond;
-import entity.Door;
-import entity.Entity;
+import main.java.entity.Air;
+import main.java.entity.Diamond;
+import main.java.entity.Door;
+import main.java.entity.Entity;
 
 /**
  * The Class Controller.
