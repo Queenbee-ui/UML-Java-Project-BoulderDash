@@ -1,13 +1,15 @@
-package model;
+package com.databaseconnection;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * The Class DBProperties.
+ * The DBProperties class.
  *
  * @author Christian
+ * @author Eliphaz
+ * @version 1.0
  */
 class DBProperties extends Properties {
 
@@ -18,13 +20,13 @@ class DBProperties extends Properties {
 	private final static String	PROPERTIES_FILE_NAME	= "model.properties";
 
 	/** The url. */
-	private String							url										= "jdbc:mysql://localhost/map?autoReconnect=true&useSSL=false";
+	private String							url										= "jdbc:mysql://localhost/jpublankproject1";
 
 	/** The login. */
 	private String							login									= "root";
 
 	/** The password. */
-	private String							password							= ""; 
+	private String							password							= "";
 
 	/**
 	 * Instantiates a new DB properties.
