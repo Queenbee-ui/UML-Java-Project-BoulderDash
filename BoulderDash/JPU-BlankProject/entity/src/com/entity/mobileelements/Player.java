@@ -105,4 +105,78 @@ public class Player extends MobileElements {
 			}
 		}
 	}
+	/**
+	 * The getIsWin method.
+	 * @return a boolean that indicates if the player won
+	 */
+	public boolean getIsWin() {
+		return isWin;
+	}
+
+	/**
+	 * The setIsWin method.
+	 * @param isWin set the win of the player
+	 */
+	public void setIsWin(boolean isWin) {
+		this.isWin = isWin;
+	}
+
+
+	/**
+	 * The playerDeathLinkToEnemy method.
+	 * Check for any enemy around the player, to kill him if there is some.
+	 */
+	public void playerDeathLinkToEnemy() {
+		
+		int x = this.getPositionX();
+		int y = this.getPositionY();
+		
+		if(this.getMap().getArrayMap()[x+1][y] instanceof Enemy ||
+				this.getMap().getArrayMap()[x-1][y] instanceof Enemy ||
+				this.getMap().getArrayMap()[x][y+1] instanceof Enemy ||
+				this.getMap().getArrayMap()[x][y-1] instanceof Enemy) {
+			this.setIsAlive(false);
+			this.loadImage('X', this);
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}		
+	}
+	
+	/**
+	 * The didPlayerWin method.
+	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
+	 */
+	public void didPlayerWin(int numberOfDiamondsNeeded) {
+		
+		this.goToExit(0, 1, numberOfDiamondsNeeded);
+		this.goToExit(0, -1, numberOfDiamondsNeeded);
+		this.goToExit(1, 0, numberOfDiamondsNeeded);
+		this.goToExit(-1, 0, numberOfDiamondsNeeded);
+		
+	}
+	
+	/**
+	 * The goToExit method.
+	 * Check if the player goes on an exitDoor.
+	 * @param sideX the x side on which the player moves
+	 * @param sideY the y side on which the player moves
+	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
+	 */ 
+	public void goToExit(int sideX, int sideY, int numberOfDiamondsNeeded) {
+		
+		int x = this.getPositionX();
+		int y = this.getPositionY();
+
+		if(this.getMap().getArrayMap()[x+sideX][y+sideY] instanceof ExitDoor && this.getDiamondsCounter() >= numberOfDiamondsNeeded) {
+			this.getMap().getArrayMap()[x+sideX][y+sideY] = this.getMap().getArrayMap()[x][y];
+			this.getMap().getArrayMap()[x][y] = new Path(x,y);
+			this.setIsWin(true);
+		}
+	}
+	
 }
