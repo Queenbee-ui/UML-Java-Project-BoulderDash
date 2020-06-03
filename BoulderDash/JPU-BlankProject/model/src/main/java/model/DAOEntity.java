@@ -3,18 +3,18 @@ package model;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import main.java.entity.Entity;;
+import entity.Entity;
 
 /**
- * The Class DAOEntity.
+ * The DAOEntity class.
  *
- * @author Alexis
- *
+ * @author Christian
+ * @author Eliphaz
+ * @version 1.0
  * @param <E>
  *          the element type
  */
-//
-abstract class DAOEntity<E extends Entity> {
+public abstract class DAOEntity<E extends Entity> {
 
 	/** The connection. */
 	private final Connection connection;
@@ -39,4 +39,43 @@ abstract class DAOEntity<E extends Entity> {
 	protected Connection getConnection() {
 		return this.connection;
 	}
+
+	/**
+	 * Creates the.
+	 *
+	 * @param entity
+	 *          the entity
+	 * @return true, if successful
+	 */
+	public abstract boolean create(E entity);
+
+	/**
+	 * Delete.
+	 *
+	 * @param entity
+	 *          the entity
+	 * @return true, if successful
+	 */
+	public abstract boolean delete(E entity);
+
+	/**
+	 * Update.
+	 *
+	 * @param entity
+	 *          the entity
+	 * @return true, if successful
+	 */
+	public abstract boolean update(E entity);
+
+	/**
+	 * Find.
+	 *
+	 * @param id
+	 *          the id
+	 * @return the e
+	 */
+	public abstract E find(int id);
+
+
+
 }
