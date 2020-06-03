@@ -24,7 +24,7 @@ import entity.Sprite;
 /**
  * The ViewPanel class.
  *
- * @author Eliphaz
+ * @author Eliphaz, Reine
  * @version 1.0
  */
 @SuppressWarnings("unused")
@@ -64,6 +64,7 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	private ViewFrame getViewFrame() {
 		return this.viewFrame;
+		//commentaires simples
 	}
 
 	/**
