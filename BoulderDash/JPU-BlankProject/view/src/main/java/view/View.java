@@ -15,6 +15,7 @@ import contract.IView;
  * @author Eliphaz
  * @version 1.0
  */
+//
 public final class View implements IView, Runnable {
 
 	/** The frame. */
