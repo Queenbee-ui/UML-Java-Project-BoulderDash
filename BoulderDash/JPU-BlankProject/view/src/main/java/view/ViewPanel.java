@@ -27,6 +27,7 @@ import entity.Sprite;
  * @author Eliphaz, Reine
  * @version 1.0
  */
+//
 @SuppressWarnings("unused")
 public
 class ViewPanel extends JPanel implements Observer {
