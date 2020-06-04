@@ -1,9 +1,9 @@
 package contract;
 
-/**
+/*
  * The Interface IController.
  *
- * @author Reine
+ * @author Groupe 6
  */
 public interface IController {
 
