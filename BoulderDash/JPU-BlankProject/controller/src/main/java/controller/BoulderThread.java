@@ -15,7 +15,7 @@ import main.java.entity.Character;
 	 * @author Christian
 	 *
 	 */
-
+//
 public class BoulderThread extends Thread {
 	/** The View */
 	IView view;
