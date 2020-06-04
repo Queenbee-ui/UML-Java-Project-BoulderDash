@@ -10,6 +10,7 @@ import contract.IView;
  * @author Touna Alexis
  * @version 1.0
  */
+//
 public final class Controller implements IController {
 
 	/** The view. */
